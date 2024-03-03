@@ -59,9 +59,9 @@ if [ "" == "$PKG_OK" ]; then
   exit 1
 fi
 
-# Download SoftEther | Version 4.34 | Build 9745
-printf "\nDownloading release: ${RED}4.34 RTM${NC} | Build ${RED}9745${NC}\n\n"
-wget -O vpnserver.tar.gz https://www.softether-download.com/files/softether/v4.34-9745-rtm-2020.04.05-tree/Linux/SoftEther_VPN_Server/64bit_-_Intel_x64_or_AMD64/softether-vpnserver-v4.34-9745-rtm-2020.04.05-linux-x64-64bit.tar.gz
+# Download SoftEther | Version 4.42 | Build 9798
+printf "\nDownloading release: ${RED}4.42 RTM${NC} | Build ${RED}9798${NC}\n\n"
+wget -O vpnserver.tar.gz https://www.softether-download.com/files/softether/v4.42-9798-rtm-2023.06.30-tree/Linux/SoftEther_VPN_Server/64bit_-_Intel_x64_or_AMD64/softether-vpnserver-v4.42-9798-rtm-2023.06.30-linux-x64-64bit.tar.gz
 tar -xzf vpnserver.tar.gz
 cd vpnserver
 echo $'1\n1\n1' | make &&
