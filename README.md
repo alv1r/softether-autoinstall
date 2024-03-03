@@ -2,33 +2,33 @@
 
 This is my SoftEther autoinstaller. This script will *hopefully* make your life a little easier. I have not made **any** modifications to the SoftEther VPN Project code at all, this script simply downloads the latest build and compiles it for use on your supported system.
 
-To get started, all you have to do is copy/paste the provided code for your OS. The script will handle everything else for you. Refer to the [Quick Start Guide](https://github.com/icoexist/softether-autoinstall#quick-start-guide) if you need to get set up quickly. Also refer to the [Commands List](https://github.com/icoexist/softether-autoinstall#commands-list) should you need them.
+To get started, all you have to do is copy/paste the provided code for your OS. The script will handle everything else for you. Refer to the [Quick Start Guide](https://github.com/alv1r/softether-autoinstall#quick-start-guide) if you need to get set up quickly. Also refer to the [Commands List](https://github.com/alv1r/softether-autoinstall#commands-list) should you need them.
 
 ### Install & Configure
-* [Supported Operating Systems](https://github.com/icoexist/softether-autoinstall#supported-operating-systems-64-bit-only)     
-* [Open Ports for SoftEther VPN](https://github.com/icoexist/softether-autoinstall#open-ports-for-softether-vpn)
-* [Using Local Bridge on SoftEther VPN](https://github.com/icoexist/softether-autoinstall#Using-Local-Bridge-Setting-on-SoftEther-VPN)
+* [Supported Operating Systems](https://github.com/alv1r/softether-autoinstall#supported-operating-systems-64-bit-only)     
+* [Open Ports for SoftEther VPN](https://github.com/alv1r/softether-autoinstall#open-ports-for-softether-vpn)
+* [Using Local Bridge on SoftEther VPN](https://github.com/alv1r/softether-autoinstall#Using-Local-Bridge-Setting-on-SoftEther-VPN)
 
 ### Uninstall
-* [Uninstall Script](https://github.com/icoexist/softether-autoinstall#uninstall-se-vpn-server-ubuntu-only)
+* [Uninstall Script](https://github.com/alv1r/softether-autoinstall#uninstall-se-vpn-server-ubuntu-only)
 
 ### Configure SoftEther VPN Server
-* [Quick Start Guide](https://github.com/icoexist/softether-autoinstall#quick-start-guide)   
-* [Other Options](https://github.com/icoexist/softether-autoinstall#other-options)   
-* [Commands List](https://github.com/icoexist/softether-autoinstall#commands-list)   
+* [Quick Start Guide](https://github.com/alv1r/softether-autoinstall#quick-start-guide)   
+* [Other Options](https://github.com/alv1r/softether-autoinstall#other-options)   
+* [Commands List](https://github.com/alv1r/softether-autoinstall#commands-list)   
 
 ### Copyright & Credit
-* [Information](https://github.com/icoexist/softether-autoinstall#copyright--credit-1)
+* [Information](https://github.com/alv1r/softether-autoinstall#copyright--credit-1)
 
 ## Supported Operating Systems (64-bit only)
 #### Ubuntu 16.04 LTS +
 ```bash
-wget -O se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/se-install-ubuntu.bash && chmod +x se-install && ./se-install
+wget -O se-install https://raw.githubusercontent.com/alv1r/softether-autoinstall/master/ubuntu/se-install-ubuntu.bash && chmod +x se-install && ./se-install
 ```
 
 #### CentOS 7 (Currently depreciated, no longer in development)
 ```bash
-curl -o se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/centos/x64/se-install-centos.bash && chmod 770 se-install && ./se-install
+curl -o se-install https://raw.githubusercontent.com/alv1r/softether-autoinstall/master/centos/x64/se-install-centos.bash && chmod 770 se-install && ./se-install
 ```
 ## Open Ports for SoftEther VPN
 ### Ubuntu
@@ -46,27 +46,27 @@ By default, the IP addresses handed out by dnsmasq will be 10.42.10.10 - 10.42.1
 ### Installation (Ubuntu)
 There's two methods of doing this. If you've already set up the SoftEther VPN Server, use the script below.
 ``` bash
-wget -O se-install https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/se-install-ubuntu.bash && chmod +x se-install && ./se-install
+wget -O se-install https://raw.githubusercontent.com/alv1r/softether-autoinstall/master/ubuntu/se-install-ubuntu.bash && chmod +x se-install && ./se-install
 ```
 
 If you are just now installing SoftEther VPN Server, then select option 1 when asked "Are you going to use the bridge option on the VPN server?".
 
 ### SoftEther VPN Server Configuration
-**Disable SecureNAT** [example here](https://upload.icoexist.io/2019/04/2019-04-25_22-46-40.mp4)
+**Disable SecureNAT** [example here](https://upload.alv1r.io/2019/04/2019-04-25_22-46-40.mp4)
 - Open the SoftEther VPN Server Management Utility
 - Connect to your VPN server
 - Select the VPN hub (or whatever hub you use on the VPN server) and click “Manage Virtual Hub”
 - Click “Virtual NAT And Virtual DHCP Server (SecureNAT)”
 - Click Disable, then exit to main configuration screen
 
-**Create Local Bridge** [example here](https://upload.icoexist.io/2019/04/2019-04-25_22-49-08.mp4)
+**Create Local Bridge** [example here](https://upload.alv1r.io/2019/04/2019-04-25_22-49-08.mp4)
 - Click “Local Bridge Setting”
 - Under “New Local Bridge Definition” select the VPN hub (or whatever hub you use on the VPN server)
 - Select the “Bridge with New Tap Device”
 - Name the device soft and click “Create Local Bridge”
 - Verify that the new device was create by running ifconfig tap_soft in a SSH terminal session. You should see something like this:
 
-![Output example](https://forum.icoexist.io/uploads/default/original/1X/b20b7e2c67d55a9b75238b53dc62797ee9d7fbb8.png)
+![Output example](https://forum.alv1r.io/uploads/default/original/1X/b20b7e2c67d55a9b75238b53dc62797ee9d7fbb8.png)
 
 ### Enable NAT and enable postrouting
 We need to create a file in /etc/sysctl.d/ to enable ipv4 forwarding. Use the following command to create this file:
@@ -90,12 +90,12 @@ If everything above was done correctly, all we need to do now is to restart the 
 `/etc/init.d/dnsmasq restart && /etc/init.d/vpnserver restart`
 
 ### Need help?
-Check out the forum post [here](https://forum.icoexist.io/t/how-to-use-softether-vpn-with-local-bridge-ubuntu/91) for a more in-depth explanation. If you can't seem to get your server to work at all, try running the install script again so you get a fresh start.
+Check out the forum post [here](https://forum.alv1r.io/t/how-to-use-softether-vpn-with-local-bridge-ubuntu/91) for a more in-depth explanation. If you can't seem to get your server to work at all, try running the install script again so you get a fresh start.
 
 ## Uninstall SE-VPN Server [Ubuntu Only]
 As of now, this bash script will only work with Ubuntu due to the use of `update-rc.d`.
 ```
-wget -O se-uninstall https://raw.githubusercontent.com/icoexist/softether-autoinstall/master/ubuntu/se-uninstall.bash && chmod 770 se-uninstall && ./se-uninstall
+wget -O se-uninstall https://raw.githubusercontent.com/alv1r/softether-autoinstall/master/ubuntu/se-uninstall.bash && chmod 770 se-uninstall && ./se-uninstall
 ```
 
 ## Configure SoftEther
@@ -117,7 +117,7 @@ This section will provide you with a list of things to get you started with your
 5. Set a password for the new user with `UserPasswordSet` | You can either use `UserPasswordSet` or `UserPasswordSet [username]`
 6. Enable SecureNAT for the DEFAULT hub with `SecurenatEnable`
 
-   Optional: You can enable L2TP/IPsec with `IpsecEnable`. It is recommended that if you use this option, you only enable L2TP/IPsec. Do not enable RAW L2TP w/o encrpytion. You will be asked to set a pre-shared key for the IPsec server, you can use anything. I've used `vpn` as a pre-shared key for ages. Remember that this is NOT a password for the server or a user, so it's safe to use that. You'll also be asked for the default hub in the event that a user does not specify the hub to connect to in their username, you'll set this to `default` if you haven't changed any hub names. If you're more advanced user and have multiple hubs, you can specify what hub a user connects to by putting it in their username on the client. For instance `icoexist@public` or `icoexist@hub2`.
+   Optional: You can enable L2TP/IPsec with `IpsecEnable`. It is recommended that if you use this option, you only enable L2TP/IPsec. Do not enable RAW L2TP w/o encrpytion. You will be asked to set a pre-shared key for the IPsec server, you can use anything. I've used `vpn` as a pre-shared key for ages. Remember that this is NOT a password for the server or a user, so it's safe to use that. You'll also be asked for the default hub in the event that a user does not specify the hub to connect to in their username, you'll set this to `default` if you haven't changed any hub names. If you're more advanced user and have multiple hubs, you can specify what hub a user connects to by putting it in their username on the client. For instance `alv1r@public` or `alv1r@hub2`.
 
 If everything was done properly, you're ready to use your new VPN server! To add new users, just launch the `vpncmd` utility and repeat steps 3 - 5.
 
